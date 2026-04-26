@@ -19,6 +19,8 @@ class User(Base):
     hashed_password: Mapped[str] = mapped_column(String(256), nullable=False)
     role: Mapped[UserRole] = mapped_column(Enum(UserRole), default=UserRole.user, nullable=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    default_region_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    favorite_crop_codes: Mapped[str | None] = mapped_column(String(512), nullable=True)  # 逗号分隔
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         default=lambda: datetime.now(timezone.utc),

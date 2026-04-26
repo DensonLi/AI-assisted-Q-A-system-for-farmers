@@ -6,7 +6,7 @@ import {
 } from "antd";
 import {
   MessageOutlined, TeamOutlined, LogoutOutlined,
-  KeyOutlined, UserOutlined,
+  KeyOutlined, UserOutlined, BulbOutlined, SettingOutlined, CalendarOutlined,
 } from "@ant-design/icons";
 import { useAuthStore } from "../store/auth";
 import { changePassword } from "../services/api";
@@ -49,7 +49,12 @@ export default function Layout() {
 
   const sideMenuItems = [
     { key: "/", label: "问答对话", icon: <MessageOutlined /> },
-    ...(isAdmin() ? [{ key: "/admin", label: "用户管理", icon: <TeamOutlined /> }] : []),
+    { key: "/memories", label: "长期记忆", icon: <BulbOutlined /> },
+    { key: "/reminders", label: "农事日历", icon: <CalendarOutlined /> },
+    ...(isAdmin() ? [
+      { key: "/admin", label: "用户管理", icon: <TeamOutlined /> },
+      { key: "/system-config", label: "系统配置", icon: <SettingOutlined /> },
+    ] : []),
   ];
 
   return (

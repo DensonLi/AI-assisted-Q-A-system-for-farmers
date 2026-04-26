@@ -7,6 +7,9 @@ from app.db.base import engine, AsyncSessionLocal
 from app.db.init_db import init_db
 import app.models.user  # noqa: F401
 import app.models.conversation  # noqa: F401
+import app.models.region  # noqa: F401
+import app.models.crop  # noqa: F401
+import app.models.memory  # noqa: F401
 
 
 @asynccontextmanager

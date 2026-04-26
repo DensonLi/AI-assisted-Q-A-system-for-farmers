@@ -6,6 +6,9 @@ import { getMe } from "./services/api";
 import LoginPage from "./pages/LoginPage";
 import ChatPage from "./pages/ChatPage";
 import AdminPage from "./pages/AdminPage";
+import MemoryPage from "./pages/MemoryPage";
+import SystemConfigPage from "./pages/SystemConfigPage";
+import RemindersPage from "./pages/RemindersPage";
 import Layout from "./components/Layout";
 import { useState } from "react";
 
@@ -56,11 +59,21 @@ export default function App() {
           }
         >
           <Route index element={<ChatPage />} />
+          <Route path="memories" element={<MemoryPage />} />
+          <Route path="reminders" element={<RemindersPage />} />
           <Route
             path="admin"
             element={
               <RequireAdmin>
                 <AdminPage />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="system-config"
+            element={
+              <RequireAdmin>
+                <SystemConfigPage />
               </RequireAdmin>
             }
           />

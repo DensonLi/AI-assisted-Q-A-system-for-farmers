@@ -7,6 +7,9 @@ from app.core.config import settings
 from app.db.base import Base
 import app.models.user  # noqa: F401
 import app.models.conversation  # noqa: F401
+import app.models.region  # noqa: F401
+import app.models.crop  # noqa: F401
+import app.models.memory  # noqa: F401
 
 config = context.config
 config.set_main_option("sqlalchemy.url", settings.ASYNC_DATABASE_URL)

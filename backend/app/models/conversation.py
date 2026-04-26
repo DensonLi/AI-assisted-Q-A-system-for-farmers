@@ -9,6 +9,8 @@ class Conversation(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    region_id: Mapped[int | None] = mapped_column(Integer, ForeignKey("regions.id"), nullable=True)
+    crop_id: Mapped[int | None] = mapped_column(Integer, ForeignKey("crops.id"), nullable=True)
     title: Mapped[str] = mapped_column(String(256), default="新对话", nullable=False)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),

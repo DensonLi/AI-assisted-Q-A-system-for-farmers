@@ -15,6 +15,8 @@ class MessageResponse(BaseModel):
 class ConversationResponse(BaseModel):
     id: int
     title: str
+    region_id: int
+    crop_id: int
     created_at: datetime
     updated_at: datetime
 

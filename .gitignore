@@ -36,9 +36,29 @@ backend/alembic/versions/__pycache__/
 .DS_Store
 Thumbs.db
 
+# Claude / MCP 工具临时文件
+.claude/settings.local.json
+.playwright-mcp/
+
+# 截图及测试截图
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+
+# 打包压缩文件
+*.zip
+*.tar.gz
+
 # Docker volumes（本地数据，不提交）
 postgres_data/
 redis_data/
 
 # 日志
 *.log
+
+# Test artifacts
+backend/test.db
+backend/*.db
+backend/.pytest_cache/
